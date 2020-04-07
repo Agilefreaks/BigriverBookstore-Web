@@ -23,6 +23,9 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.API_BASE_URL = 'https://jsonapiplayground.reyesoft.com';
+  ENV.BOOKS_PER_PAGE = 9;
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

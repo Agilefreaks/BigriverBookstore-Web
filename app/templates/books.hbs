@@ -1,0 +1,9 @@
+<h1>Books</h1>
+
+{{#each @model as |book|}}
+	<div data-test="book-item">
+		<img src={{ book.image.uri }} title={{ book.image.title }} data-test="book-image" />
+		<p data-test="book-title">{{ book.title }}</p>
+		<p data-test="book-author">{{ book.author.name }}</p>
+	</div>
+{{/each}}
