@@ -1,2 +1,48 @@
-{{outlet}}
+<BsNavbar
+	@type="dark"
+	@backgroundColor="dark"
+	@collapsed={{true}}
+	@onCollapse={{action (mut collapsed) true}}
+	@onExpand={{action (mut collapsed) false}} as |navbar|>
+	<div class="navbar-header">
+		{{navbar.toggle}}
+		{{#link-to "books" class="navbar-brand"}}Brand{{/link-to}}
+	</div>
+	<navbar.content>
+		<navbar.nav as |nav|>
+			<nav.item>
+				<nav.link-to @route="books">Home</nav.link-to>
+			</nav.item>
+		</navbar.nav>
+		<ul class="navbar-nav ml-auto">
+			<SearchBooks />
+		</ul>
+	</navbar.content>
+</BsNavbar>
 
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1>Album example</h1>
+    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+    <p>
+      <a href="#" class="btn btn-primary my-2">Main call to action</a>
+      <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+    </p>
+  </div>
+</section>
+	
+<div class="container">
+	<div class="row">
+		{{outlet}}
+	</div>
+</div>
+
+<footer class="text-muted footer mt-auto py-3">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
+    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.4/getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>
