@@ -1,0 +1,6 @@
+<h1>Books with the author name: "{{ this.query }}"</h1>
+{{#link-to "books"}}All Books{{/link-to}}
+
+<SearchBooks />
+
+<ListBooks @model={{ this.model }} />

@@ -1,0 +1,4 @@
+<form {{ action "searchByAuthor" on="submit" }} data-test="search-by-author-form">
+	Search for author: {{ input type="text" name="keyword" placeholder="Search by author name" value=this.keyword }}
+	<button type="submit" disabled={{ this.isDisabled }} data-test="search-btn">Search</button>
+</form>

@@ -25,4 +25,20 @@ module('Acceptance | books', function(hooks) {
     assert.ok(page.books(0).hasAuthor);
     assert.ok(page.books(0).hasImage);
   });
+
+  test('when providing an empty string the submit is disabled', async function (assert) {
+    await page
+      .visit()
+      .fillInSearchInput('  ');
+
+    assert.equal(page.searchDisabledPresent, true);
+  });
+
+  test('when providing a good search query the submit is not disabled', async function (assert) {
+    await page
+      .visit()
+      .fillInSearchInput('prof');
+
+    assert.equal(page.searchDisabledPresent, false);
+  });
 });
