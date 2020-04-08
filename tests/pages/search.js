@@ -2,12 +2,13 @@ import {
   create,
   visitable,
   collection,
-  isPresent,
-  fillable
+  isPresent
 } from 'ember-cli-page-object';
 
 export default create({
-  visit: visitable('/'),
+  visitOkParam: visitable('/search?query=prof'),
+  visitNotOkParam: visitable('/search?query=asdasad'),
+  noResultsExists: isPresent('[data-test="no-books"]'),
   books: collection({
     itemScope: '[data-test="book-item"]',
     item: {
@@ -16,6 +17,4 @@ export default create({
       hasImage: isPresent('[data-test="book-image"]')
     }
   }),
-  searchDisabledPresent: isPresent('[data-test="search-btn"]:disabled'),
-  fillInSearchInput: fillable('input', { scope: '[data-test="search-by-author-form"]' }),
 });
