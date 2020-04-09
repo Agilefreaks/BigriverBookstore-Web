@@ -1,15 +1,7 @@
 {{#each @model as |book|}}
-	<div class="col-lg-4 col-md-6" data-test="book-item">
-	  <div class="card mb-4 shadow-sm">
-	    <img src={{ book.image.uri }} title={{ book.image.title }} data-test="book-image" />
-	    <div class="card-body">
-	      <p class="card-text" data-test="book-title">{{ book.title }}</p>
-	      <p class="card-text" data-test="book-author"><strong>{{ book.author.name }}</strong></p>
-	    </div>
-	  </div>
-	</div>
+	<BookItem @book={{ book }} />
 {{else}}
-	<div data-test="no-books">
-		There are no books to be displayed
+	<div class="alert alert-warning mx-auto" role="alert" data-test="no-books">
+		There are no books to be displayed. Try looking on {{#link-to "books" class="alert-link"}}homepage{{/link-to}} for more awesome books!
 	</div>
 {{/each}}

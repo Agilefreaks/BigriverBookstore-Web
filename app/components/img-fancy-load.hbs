@@ -1,0 +1,7 @@
+<div ...attributes>
+	{{#if this.showPlaceholder }}
+		<div class="img-placeholder" data-test="fancy-placeholder"></div>
+	{{/if}}
+	
+	<img src={{ @this.src}} title={{ @this.title }} data-test={{ @this.dataTest }} class={{ @this.class }} {{on "load" this.loaded }} {{on "error" this.error }} />
+</div>

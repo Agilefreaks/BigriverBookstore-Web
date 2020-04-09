@@ -18,4 +18,5 @@ export default create({
   }),
   searchDisabledPresent: isPresent('[data-test="search-btn"]:disabled'),
   fillInSearchInput: fillable('input', { scope: '[data-test="search-by-author-form"]' }),
+  fancyPlaceholder: isPresent('[data-test="fancy-placeholder"]'),
 });
