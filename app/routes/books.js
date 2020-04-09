@@ -4,13 +4,16 @@ import ENV from 'bigriver-bookstore/config/environment'
 
 export default class BooksRoute extends Route {
   @service store;
+  @service infinity;
 
   model() {
-    return this.store.query('book', {
-      page: {
-        size: ENV.BOOKS_PER_PAGE
-      },
-      include: 'author,photos'
+    return this.infinity.model('book', {
+      include: 'author,photos',
+      perPage: ENV.BOOKS_PER_PAGE,
+      startingPage: 1,
+      perPageParam: 'page[size]', 
+      pageParam: 'page[number]', 
+      countParam: 'meta.total_resources'
     });
   }
 }
