@@ -9,6 +9,6 @@ export default class BookModel extends Model {
 
   get image() {
     const firstImage = this.photos.get('firstObject');
-    return firstImage ? firstImage : { uri: 'http://placehold.jp/d1d1d1/707070/400x300.png?text=No%20Image', title: 'No Image' };
+    return firstImage ? firstImage : { uri: 'placeholder-img.png', title: 'No Image' };
   }
 }
