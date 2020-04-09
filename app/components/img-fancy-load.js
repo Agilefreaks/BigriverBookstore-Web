@@ -3,7 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object'
 
 export default class SearchBooksComponent extends Component {
-	placeholderSrc = 'http://placehold.jp/d1d1d1/707070/400x300.png?text=No%20Image';
+	placeholderSrc = 'placeholder-img.png';
 	@tracked showPlaceholder = true;
 
 	@action
@@ -12,8 +12,8 @@ export default class SearchBooksComponent extends Component {
 	}
 
 	@action
-	error() {
-		this.src = this.placeholderSrc;
+	error(event) {
+		event.target.src = this.placeholderSrc;
 		this.showPlaceholder = false;
 	}
 }

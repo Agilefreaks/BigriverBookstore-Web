@@ -5,3 +5,9 @@
 		There are no books to be displayed. Try looking on {{#link-to "books" class="alert-link"}}homepage{{/link-to}} for more awesome books!
 	</div>
 {{/each}}
+
+{{#if @model }}
+	<InfinityLoader @infinityModel={{ @model }}>
+		<img src="spinner.gif" title="spinner" />
+	</InfinityLoader>
+{{/if}}

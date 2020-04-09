@@ -23,9 +23,9 @@ module('Unit | Model | book', function(hooks) {
   test('when no image provided return the placeholder', function (assert) {
     const store = this.owner.lookup('service:store');
 
-    const placeholder = { uri: 'http://placehold.jp/d1d1d1/707070/400x300.png?text=No%20Image', title: 'No Image' };
+    const placeholder = { uri: 'placeholder-img.png', title: 'No Image' };
     const model = store.createRecord('book', { title: 'Book #1' });
 
-    assert.equal(model.image.uri, 'http://placehold.jp/d1d1d1/707070/400x300.png?text=No%20Image');
+    assert.equal(model.image.uri, 'placeholder-img.png');
   });
 });
