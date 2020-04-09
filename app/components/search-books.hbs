@@ -1,4 +1,4 @@
-<form {{ action "searchByAuthor" on="submit" }} data-test="search-by-author-form">
-	Search for author: <Input @type="text" @name="keyword" @placeholder="Search by author name" @value={{this.keyword}} />
-	<button type="submit" disabled={{ this.isDisabled }} data-test="search-btn">Search</button>
+<form {{ action "searchByAuthor" on="submit" }} data-test="search-by-author-form" class="form-inline">
+	<Input type="text" name="keyword" placeholder="Search by author name" @value={{this.keyword}} class="form-control mr-2" />
+	<button class="btn btn-light" type="submit" disabled={{ this.isDisabled }} data-test="search-btn">Search</button>
 </form>

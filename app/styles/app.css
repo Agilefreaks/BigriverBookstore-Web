@@ -1,8 +1,42 @@
 html,body{
-    height: 100%
+  height: 100%;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
+}
+
+h1 {
+	font-size: 1.2rem;
+	width: 100%;
+}
+
+.img-fancy-load {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  width: 100%;
+}
+
+.img-fancy-load .img-placeholder {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ccc;
+  background-image: url('http://placehold.it/400x300?text=Loading Image');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.img-fancy-load img {
+	width: 100%;
+	height: 300px;
+}
+
+footer .badge {
+	font-size: 0.9rem;
 }

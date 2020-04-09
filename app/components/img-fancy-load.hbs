@@ -1,0 +1,5 @@
+{{#if showImg}}
+	<img src={{ @this.src}} title={{ @this.title }} data-test={{ @this.dataTest }} class={{ @this.class }} />
+{{else}}
+	<div class="img-placeholder" data-test="fancy-placeholder"></div>
+{{/if}}

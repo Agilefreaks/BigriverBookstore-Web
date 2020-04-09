@@ -4,30 +4,28 @@
 	@collapsed={{true}}
 	@onCollapse={{action (mut collapsed) true}}
 	@onExpand={{action (mut collapsed) false}} as |navbar|>
-	<div class="navbar-header">
-		{{navbar.toggle}}
-		<LinkTo @route="books" class="navbar-brand">Brand</LinkTo>
+	<div class="container">
+		<div class="navbar-header">
+			{{navbar.toggle}}
+			<LinkTo @route="books" class="navbar-brand">BooksList 📚</LinkTo>
+		</div>
+		<navbar.content>
+			<navbar.nav as |nav|>
+				<nav.item>
+					<nav.link-to @route="books">Home</nav.link-to>
+				</nav.item>
+			</navbar.nav>
+			<ul class="navbar-nav ml-auto">
+				<SearchBooks />
+			</ul>
+		</navbar.content>
 	</div>
-	<navbar.content>
-		<navbar.nav as |nav|>
-			<nav.item>
-				<nav.link-to @route="books">Home</nav.link-to>
-			</nav.item>
-		</navbar.nav>
-		<ul class="navbar-nav ml-auto">
-			<SearchBooks />
-		</ul>
-	</navbar.content>
 </BsNavbar>
 
 <section class="jumbotron text-center">
   <div class="container">
-    <h1>Album example</h1>
-    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-    <p>
-      <a href="#" class="btn btn-primary my-2">Main call to action</a>
-      <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-    </p>
+    <p class="lead text-muted">Here you can find the best books around the web. Just stick around and be amazed ✨</p>
+    <p class="font-italic">PS. Don't forget to search by your favorite authors</p>
   </div>
 </section>
 	
@@ -42,7 +40,6 @@
     <p class="float-right">
       <a href="#">Back to top</a>
     </p>
-    <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.4/getting-started/introduction/">getting started guide</a>.</p>
+    <p>Made with ♥ by <a href="https://romeoonisim.com/" target="_blank" class="badge badge-light">Romeo</a> &amp; <a href="https://www.agilefreaks.com/" target="_blank" class="badge badge-light">AgileFreaks</a></p>
   </div>
 </footer>

@@ -1,0 +1,9 @@
+<div class="col-lg-4 col-md-6" data-test="book-item">
+  <div class="card mb-4 shadow-sm">
+    <ImgFancyLoad @src={{ @book.image.uri }} @title={{ @book.image.title }} @class="main-image" data-test="book-image" />
+    <div class="card-body">
+      <p class="card-text text-center mb-1 font-italic" data-test="book-title">{{ @book.title }}</p>
+      <p class="card-text text-center font-weight-bold" data-test="book-author">{{ @book.author.name }}</p>
+    </div>
+  </div>
+</div>
